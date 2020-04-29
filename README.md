@@ -1,6 +1,8 @@
 # List-Hotels-React-Js
 Lista de Hoteles en React 
 
+![List-Hotels](https://github.com/Jean73560/List-Hotels-React-Js/blob/master/proyect-hotels/src/img/list-hotels.jpg?raw=true)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
