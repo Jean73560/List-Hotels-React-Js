@@ -10,6 +10,7 @@ class Application extends React.Component{
 constructor(props){
     super(props);
     this.state = {
+        ApiUrl: process.env.REACT_APP_API_URL,
         filters:{
             dateFrom: "",
             dateTo: "",
@@ -23,21 +24,32 @@ constructor(props){
     };
     this.handleFilterChange = this.handleFilterChange.bind(this);
     this.FilterBy = this.FilterBy.bind(this);
+    this.requestApi = this.requestApi.bind(this);
 };
 
 // Llamada a la Api de Acamica
 componentDidMount(){
-    fetch('https://wt-8a099f3e7c73b2d17f4e018b6cfd6131-0.sandbox.auth0-extend.com/acamica')
-    .then(results => {
-        return results.json();
-    }).then(data => {
-        this.setState({
-            hotels: data,
-            filteredHotels: data,
-            isAllLoaded: true
-        })
-    }).catch(() => console.log('Error en la petición...'));
+  //Llamada a la Api de Acamica
+  this.requestApi();
 }
+
+//Llamada a la Api de Acamica
+requestApi = async () => {
+  try {
+    const response = await fetch(this.state.ApiUrl);
+    const json = await response.json();
+
+    this.setState({
+      hotels: json,
+      filteredHotels: json,
+      isAllLoaded: true
+    });
+
+  } catch (error) {
+    console.log('Error en la petición...', error)
+  }
+}
+
 //actualizamos los Filtros en el state
 handleFilterChange(payload) {
     const newFilteredHotels = this.FilterBy(payload,this.state.hotels);

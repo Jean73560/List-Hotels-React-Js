@@ -1,3 +1,9 @@
+
+
+![shopping-cart](https://raw.githubusercontent.com/Jean73560/-shopping-cart-vanilla-javascript/master/img/img-shopping-cart.png)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
