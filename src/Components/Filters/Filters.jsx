@@ -22,7 +22,7 @@ class Filters extends React.Component{
     render(){
         return(
             <nav className="navbar is-info" style={ {justifyContent: 'center'} }>
-                <div className="navbar-item">
+            {/*<div className="navbar-item">
                     <DateFilter
                     date={ this.props.filters.dateFrom}
                     icon="sign-in-alt" 
@@ -35,7 +35,7 @@ class Filters extends React.Component{
                     icon="sign-out-alt" 
                     onDateChange={this.handleOptionChange}
                     name="dateTo"/>
-                </div>
+                </div>*/}
                 <div className="navbar-item">
                     <OptionsFilter
                     options={ [ {value: "", name: 'Todos los países'}, {value: 'Argentina', name: 'Argentina'}, {value: 'Brasil', name: 'Brasil'}, {value: 'Chile', name: 'Chile'}, {value: 'Uruguay', name: 'Uruguay'} ] }
